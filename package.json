@@ -1,0 +1,46 @@
+{
+  "name": "fc-oberwil",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run development",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "production": "mix --production",
+    "build": "npm run production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DIG-ID/fc-oberwill"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DIG-ID/fc-oberwill/issues"
+  },
+  "homepage": "https://github.com/DIG-ID/fc-oberwill#readme",
+  "devDependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "browser-sync": "^2.26.14",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "cross-env": "^7.0.3",
+    "laravel-mix": "^6.0.16",
+    "postcss": "^8.2.10",
+    "resolve-url-loader": "^3.1.2",
+    "sass": "^1.32.8",
+    "sass-loader": "^11.0.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "jquery": "^3.6.0",
+    "popper.js": "^1.16.1",
+    "readmore-js": "^2.2.1",
+    "sticky-sidebar": "^3.3.1",
+    "swiper": "^6.5.6"
+  }
+}
