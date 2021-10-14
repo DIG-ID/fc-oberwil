@@ -36,7 +36,7 @@
     "sass-loader": "^11.0.1"
   },
   "dependencies": {
-    "bootstrap": "^4.6.0",
+    "bootstrap": "^5.1.3",
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
     "readmore-js": "^2.2.1",

@@ -12,7 +12,7 @@ function fcoberwil_setup() {
 		* If you're building a theme based on Twenty Twenty-One, use a find and replace
 		* to change 'twentytwentyone' to the name of your theme in all the template files.
 		*/
-	load_theme_textdomain( 'fco', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'fc-oberwil', get_template_directory() . '/languages' );
 
 	/*
 		* Let WordPress manage the document title.
@@ -73,9 +73,9 @@ function fcoberwil_setup() {
 
 	register_nav_menus(
 		array(
-			'primary' => esc_html__( 'Main menu', 'fco' ),
-			'mobile'  => esc_html__( 'Mobile menu', 'fco' ),
-			'footer'  => __( 'Footer menu', 'fco' ),
+			'primary' => esc_html__( 'Main menu', 'fc-oberwil' ),
+			'mobile'  => esc_html__( 'Mobile menu', 'fc-oberwil' ),
+			'footer'  => __( 'Footer menu', 'fc-oberwil' ),
 		)
 	);
 
@@ -125,8 +125,8 @@ function fcoberwil_register_sidebars() {
 	register_sidebar(
 		array(
 			'id'            => 'footer-widgets',
-			'name'          => __( 'Footer Widgets' ),
-			'description'   => __( 'Widgets that appears on the footer of the website.' ),
+			'name'          => __( 'Footer Widgets', 'fc-oberwil' ),
+			'description'   => __( 'Widgets that appears on the footer of the website.', 'fc-oberwil' ),
 			'before_widget' => '<div id="%1$s" class="col-sm-12 col-md-3 widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title">',
