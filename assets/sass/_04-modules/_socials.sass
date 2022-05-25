@@ -1,0 +1,35 @@
+.socials-wrapper
+  display: flex
+  .social-link
+    display: block
+    margin-right: 30px
+    &:last-of-type
+      margin-right: 0px
+    svg
+      height: 16px
+      fill: #FFFFFF
+      margin-top: -6px
+.navbar
+  .socials-wrapper
+    position: relative
+    padding-left: 30px
+    &::before
+      content: ''
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      width: 1px
+      height: 100%
+      background-color: #FFFFFF
+
+@include media-breakpoint-down(lg)
+  .navbar
+    .offcanvas-body
+      .socials-wrapper
+        border-top: 1px solid lighten($dark-blue, 10%)
+        padding-top: 20px
+        padding-left: 0px
+        &::before
+          display: none
+

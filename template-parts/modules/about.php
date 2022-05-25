@@ -1,0 +1,46 @@
+<?php
+/**
+ * Displays the welcome section on the home page.
+ */
+?>
+<section id="about-section" class="about-section">
+	<div class="container">
+		<div class="row align-items-center about-wrapper">
+			<div class="col-12 col-lg-6">
+				<?php
+				$image = get_field( 'about_section_image' );
+				if ( $image ) :
+					echo wp_get_attachment_image( $image, 'full' );
+				endif;
+				?>
+			</div>
+			<div class="col-12 col-lg-6">
+				<p class="section-subtitle"><?php the_field( 'about_section_subtitle' ); ?></p>
+				<div class="section-title-wrapper">
+					<h2 class="section-title"><?php the_field( 'about_section_title' ); ?></h2>
+					<span></span>
+				</div>
+				<p class="section-description"><?php the_field( 'about_section_description' ); ?></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 col-lg-6">
+				<span class="section-subtitle"><?php the_field( 'about_section_sponsors_group_subtitle' ); ?></span>
+				<h2 class="section-title"><?php the_field( 'about_section_sponsors_group_title' ); ?></h2>
+			</div>
+		</div>
+		<?php
+		$featured_sponsors = get_field( 'about_section_sponsors_group_sponsors' );
+		if ( $featured_sponsors ) :
+			?>
+			<div class="row sponsors-wrapper">
+				<?php foreach ( $featured_sponsors as $sponsor ) :
+					?>
+					<div class="col-6 col-sm-6 col-md-6 col-lg-3">
+						<?php echo get_the_post_thumbnail( $sponsor->ID,'full' ); ?>
+					</div>
+				<?php endforeach; ?>
+			</div>
+		<?php endif; ?>
+	</div>
+</section>

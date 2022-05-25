@@ -1,18 +1,21 @@
 // webpack.mix.js
 
-let mix = require("laravel-mix");
+let mix = require('laravel-mix');
 
 mix
-  .setPublicPath("build")
-  .setResourceRoot("./")
-  .js("assets/js/app.js", "build")
-  .sass("assets/sass/main.sass", "build")
-  .sass("assets/sass/admin-login.sass", "build")
+  .setPublicPath('dist')
+  .setResourceRoot('./')
+  .autoload({
+    jquery: ['$', 'window.jQuery']
+  })
+  .js('assets/js/main.js', 'dist')
+  .sass('assets/sass/main.sass', 'dist')
+  .sass('assets/sass/admin-login.sass', 'dist')
 
   .disableNotifications()
   .browserSync({
-    proxy: "fcoberwil.local",
-    files: ["./**/*.php", "./build/*.js", "./build/*.css"]
+    proxy: "localhost/fcoberwil",
+    files: ["./**/*.php", "./dist/*.js", "./dist/*.css"]
   });
 
 if (!mix.inProduction()) {

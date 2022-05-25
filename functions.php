@@ -5,54 +5,17 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  */
 
-function fcoberwil_setup() {
-	/*
-		* Make theme available for translation.
-		* Translations can be filed in the /languages/ directory.
-		* If you're building a theme based on Twenty Twenty-One, use a find and replace
-		* to change 'twentytwentyone' to the name of your theme in all the template files.
-		*/
-	load_theme_textdomain( 'fc-oberwil', get_template_directory() . '/languages' );
+function fco_setup() {
 
-	/*
-		* Let WordPress manage the document title.
-		* This theme does not use a hard-coded <title> tag in the document head,
-		* WordPress will provide it for us.
-		*/
+	add_theme_support( 'menus' );
+
+	add_theme_support( 'custom-logo' );
+
 	add_theme_support( 'title-tag' );
 
-	// Add support for responsive embedded content.
-	add_theme_support( 'responsive-embeds' );
+	add_theme_support( 'post-thumbnails' );
 
-	/**
-	 * Add post-formats support.
-	 */
-	add_theme_support(
-		'post-formats',
-		array(
-			'gallery',
-			'video',
-		)
-	);
-
-		/**
-	 * Add support for core custom logo.
-	 *
-	 * @link https://codex.wordpress.org/Theme_Logo
-	 */
-	$logo_width  = 300;
-	$logo_height = 100;
-
-	add_theme_support(
-		'custom-logo',
-		array(
-			'height'               => $logo_height,
-			'width'                => $logo_width,
-			'flex-width'           => true,
-			'flex-height'          => true,
-			'unlink-homepage-logo' => true,
-		)
-	);
+	add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ) );
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
@@ -63,25 +26,27 @@ function fcoberwil_setup() {
 	// Add support for full and wide align images.
 	add_theme_support( 'align-wide' );
 
-		/*
-		* Enable support for Post Thumbnails on posts and pages.
-		*
-		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		*/
+	/*
+	* Enable support for Post Thumbnails on posts and pages.
+	*
+	* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	*/
 	add_theme_support( 'post-thumbnails' );
+	
 	set_post_thumbnail_size( 1920, 9999 );
+
+	add_image_size( 'hero-banner', 1920, 1080, array( 'center', 'center' ) );
 
 	register_nav_menus(
 		array(
-			'primary' => esc_html__( 'Main menu', 'fc-oberwil' ),
-			'mobile'  => esc_html__( 'Mobile menu', 'fc-oberwil' ),
+			'primary' => __( 'Main menu', 'fc-oberwil' ),
 			'footer'  => __( 'Footer menu', 'fc-oberwil' ),
 		)
 	);
 
 }
 
-add_action( 'after_setup_theme', 'fcoberwil_setup' );
+add_action( 'after_setup_theme', 'fco_setup' );
 
 /**
  * Enqueue scripts and styles.
@@ -90,10 +55,16 @@ add_action( 'after_setup_theme', 'fcoberwil_setup' );
  *
  * @return void
  */
-function fcoberwil_styles_and_scripts() {
+function fco_styles_and_scripts() {
 
-	// Theme main style.
-	wp_enqueue_style( 'fcoberwil-main-style', get_template_directory_uri() . '/build/main.css', array(), wp_get_theme()->get( 'Version' ) );
+	// Register Theme main style.
+	wp_register_style( 'fco-theme-style', get_template_directory_uri() . '/dist/main.css', array(), wp_get_theme()->get( 'Version' ) );
+
+	// Add styles inline.
+	wp_add_inline_style( 'fco-theme-style', fco_get_font_face_styles() );
+
+	// Enqueue theme stylesheet.
+	wp_enqueue_style( 'fco-theme-style' );
 
 	// Threaded comment reply styles.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -102,7 +73,7 @@ function fcoberwil_styles_and_scripts() {
 
 	wp_register_script(
 		'fcoberwil-scripts',
-		get_template_directory_uri() . '/build/app.js',
+		get_template_directory_uri() . '/dist/main.js',
 		array(),
 		wp_get_theme()->get( 'Version' ),
 		true
@@ -117,10 +88,90 @@ function fcoberwil_styles_and_scripts() {
 
 }
 
-add_action( 'wp_enqueue_scripts', 'fcoberwil_styles_and_scripts' );
+add_action( 'wp_enqueue_scripts', 'fco_styles_and_scripts' );
 
-// Register ustom theme sidebar.
-function fcoberwil_register_sidebars() {
+
+if ( ! function_exists( 'fco_get_font_face_styles' ) ) :
+
+	/**
+	 * Get font face styles.
+	 * Called by functions twentytwentytwo_styles() and twentytwentytwo_editor_styles() above.
+	 *
+	 * @since Twenty Twenty-Two 1.0
+	 *
+	 * @return string
+	 */
+	function fco_get_font_face_styles() {
+
+		return "
+		@font-face{
+			font-family: 'Poppins';
+			font-weight: 400;
+			font-style: normal;
+			font-stretch: normal;
+			font-display: swap;
+			src: url('" . get_theme_file_uri( 'assets/fonts/Poppins-Regular.ttf' ) . "') format('ttf');
+		}
+
+		@font-face{
+			font-family: 'Poppins';
+			font-weight: 600;
+			font-style: normal;
+			font-stretch: normal;
+			font-display: swap;
+			src: url('" . get_theme_file_uri( 'assets/fonts/Poppins-SemiBold.ttf' ) . "') format('ttf');
+		}
+		
+		@font-face{
+			font-family: 'Roboto';
+			font-weight: 400;
+			font-style: normal;
+			font-stretch: normal;
+			font-display: swap;
+			src: url('" . get_theme_file_uri( 'assets/fonts/Roboto-Regular.ttf' ) . "') format('ttf');
+		}
+
+		@font-face{
+			font-family: 'Roboto';
+			font-weight: 700;
+			font-style: normal;
+			font-stretch: normal;
+			font-display: swap;
+			src: url('" . get_theme_file_uri( 'assets/fonts/Roboto-Bold.ttf' ) . "') format('ttf');
+		}
+		";
+
+	}
+
+endif;
+
+if ( ! function_exists( 'fco_preload_webfonts' ) ) :
+
+	/**
+	 * Preloads the main web font to improve performance.
+	 *
+	 * Only the main web font (font-style: normal) is preloaded here since that font is always relevant (it is used
+	 * on every heading, for example). The other font is only needed if there is any applicable content in italic style,
+	 * and therefore preloading it would in most cases regress performance when that font would otherwise not be loaded
+	 * at all.
+	 *
+	 * @since Twenty Twenty-Two 1.0
+	 *
+	 * @return void
+	 */
+	function fco_preload_webfonts() {
+		?>
+		<link rel="preload" href="<?php echo esc_url( get_theme_file_uri( 'assets/fonts/Poppins-Regular.ttf' ) ); ?>" as="font" type="font/ttf" crossorigin>
+		<link rel="preload" href="<?php echo esc_url( get_theme_file_uri( 'assets/fonts/Roboto-Regular.ttf' ) ); ?>" as="font" type="font/ttf" crossorigin>
+		<?php
+	}
+
+endif;
+
+add_action( 'wp_head', 'fco_preload_webfonts' );
+
+// Register custom theme sidebar.
+function fco_register_sidebars() {
 	/* Register the 'primary' sidebar. */
 	register_sidebar(
 		array(
@@ -136,20 +187,23 @@ function fcoberwil_register_sidebars() {
 	/* Repeat register_sidebar() code for additional sidebars. */
 }
 
-add_action( 'widgets_init', 'fcoberwil_register_sidebars' );
+add_action( 'widgets_init', 'fco_register_sidebars' );
 
 
 // Theme optimization.
 require get_template_directory() . '/inc/theme-optimizations.php';
 
 // Theme custom template tags.
-//require get_template_directory() . '/inc/theme-template-tags.php';
+require get_template_directory() . '/inc/theme-template-tags.php';
 
 // Theme custom custom functions.
 //require get_template_directory() . '/inc/theme-custom-functions.php';
 
 // Theme custom custom customizer.
 require get_template_directory() . '/inc/customizer.php';
+
+// Theme custom nav Walker.
+require get_template_directory() . '/inc/theme-custom-walker.php';
 
 
 // Theme admin settings.
