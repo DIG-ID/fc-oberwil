@@ -1,5 +1,6 @@
 .navbar
   padding: 20px 0px
+  transition: all .3s ease-in-out
   #main-nav
     .nav-item
       margin-right: 30px
@@ -13,7 +14,6 @@
         padding-left: 0px
         padding-right: 0px
         &:hover
-          color: #860000
           &:before
             visibility: visible
             width: 100%
@@ -27,6 +27,16 @@
           background: #a70d0d
           visibility: hidden
           transition: all 0.3s ease-in-out
+      &:last-of-type
+        .nav-link
+          border: 1px solid #FFFFFF
+          padding: 5px 25px
+          border-radius: 50px
+          &:hover
+            background-color: #FFFFFF
+            color: $primary-color
+          &:before
+            display: none
     .current-menu-item
       .nav-link
         &:before
@@ -81,7 +91,5 @@
             .nav-link
               font-size: 1.2rem
               color: #FFFFFF
-              &:hover
-                color: #a70d0d
               &:before
                 background: #a70d0d

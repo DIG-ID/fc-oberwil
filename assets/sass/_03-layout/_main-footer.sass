@@ -1,0 +1,118 @@
+.main-footer
+  background-color: $dark-grey
+  color: #FFFFFF
+  hr
+    background-color: #3e4146
+  .widgets-wrapper
+    padding-top: 120px
+    padding-bottom: 60px
+    .widget-wrapper
+      margin-bottom: 40px
+      
+      .widget-title
+        font-family: $title-font
+        font-weight: 600
+        font-size: 1.3rem
+        display: inline-block
+        margin-bottom: 20px
+        &::after
+          content: ''
+          display: inline-block
+          width: 25px
+          height: 2px
+          background-color: $primary-color
+          margin-left: 10px
+      .widget-content
+        img
+          max-width: 100%
+          height: auto
+          object-fit: cover
+        .socials-wrapper
+          .social-link
+            margin-right: 20px
+            &:hover
+              svg
+                fill: $primary-color
+            svg
+              transition: all .3s ease-in-out
+              height: 20px
+      .widget-contact
+        &--address
+          display: flex
+          align-items: center
+          margin-bottom: 20px
+          svg
+            margin-right: 20px
+          p
+            font-family: $title-font
+            font-size: .9rem
+            font-weight: 400
+            text-decoration: none
+            letter-spacing: 0.3px
+            margin: 0px
+        &--email
+          display: flex
+          align-items: center
+          margin-bottom: 20px
+          svg
+            margin-right: 20px
+          a
+            margin: 0px
+            font-family: $title-font
+            font-size: .9rem
+            font-weight: 400
+            text-decoration: none
+            letter-spacing: 0.3px
+            color: #FFFFFF
+
+
+
+  .copyright-widgets-wrapper
+    padding: 10px 0px 20px
+    #copyright_footer
+      list-style: none
+      margin: 0px
+      padding: 0px
+      display: flex
+      .menu-item
+        margin-right: 20px
+        &:last-of-type
+          margin-right: 0px
+        a
+          font-family: $title-font
+          font-size: .9rem
+          font-weight: 400
+          text-decoration: none
+          letter-spacing: 0.3px
+          color: #ccc
+          opacity: .5
+          transition: all .3s ease-in-out
+          &:hover
+            opacity: 1
+    .devby
+      margin: 0px
+      font-family: $title-font
+      font-size: .9rem
+      font-weight: 400
+      text-decoration: none
+      letter-spacing: 0.3px
+      color: #ccc
+      opacity: .5
+      transition: all .3s ease-in-out
+      a
+        font-family: $title-font
+        font-size: .9rem
+        font-weight: 400
+        text-decoration: none
+        letter-spacing: 0.3px
+        color: #1FCCB7
+        transition: all .3s ease-in-out
+      &:hover
+        opacity: 1
+
+@include media-breakpoint-down(md)
+  .main-footer
+    .copyright-widgets-wrapper
+      #copyright_footer
+        justify-content: center
+        margin-bottom: 10px

@@ -37,6 +37,18 @@ function fco_setup() {
 
 	add_image_size( 'hero-banner', 1920, 1080, array( 'center', 'center' ) );
 
+	add_image_size( 'block-image', 952, 540, array( 'center', 'center' ) );
+
+	add_image_size( 'news-sm-thumbnail', 300, 265, array( 'center', 'center' ) );
+
+	add_image_size( 'news-lg-thumbnail', 640, 410, array( 'center', 'center' ) );
+
+	add_image_size( 'full-team', 1920, 600, array( 'center', 'center' ) );
+
+	add_image_size( 'staff_portrait', 310, 400, array( 'center', 'center' ) );
+
+	add_image_size( 'sponsoren-logo-thumb', 420, 230, array( 'center', 'center' ) );
+
 	register_nav_menus(
 		array(
 			'primary' => __( 'Main menu', 'fc-oberwil' ),
@@ -81,14 +93,23 @@ function fco_styles_and_scripts() {
 
 	wp_enqueue_script( 'fcoberwil-scripts' );
 
-	//wp_enqueue_script( 'fcoberwil-cookie-bar', get_theme_file_uri( '/assets/js/custom/cookieBar.js' ), array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
-
-	// Print styles.
-	//wp_enqueue_style( 'aamob-uk-print-style', get_template_directory_uri() . '/build/print.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
+	if ( is_page_template( 'page-templates/page-clubhaus.php' ) ) :
+		wp_enqueue_script( 'google-map-api', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCB2RShyxiN7xPsQy1QI_SbqXXjW5p08S0', array(), wp_get_theme()->get( 'Version' ), true );
+		wp_enqueue_script( 'google-map-settings', get_stylesheet_directory_uri() . '/dist/google-maps.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
+	endif;
 
 }
 
 add_action( 'wp_enqueue_scripts', 'fco_styles_and_scripts' );
+
+// Google maps
+function my_acf_init() {
+	acf_update_setting( 'google_api_key', 'AIzaSyCB2RShyxiN7xPsQy1QI_SbqXXjW5p08S0' );
+}
+
+if ( is_page_template( 'page-templates/page-clubhaus.php' ) || is_admin() ) :
+	add_action( 'acf/init', 'my_acf_init' );
+endif;
 
 
 if ( ! function_exists( 'fco_get_font_face_styles' ) ) :
@@ -188,7 +209,6 @@ function fco_register_sidebars() {
 }
 
 add_action( 'widgets_init', 'fco_register_sidebars' );
-
 
 // Theme optimization.
 require get_template_directory() . '/inc/theme-optimizations.php';

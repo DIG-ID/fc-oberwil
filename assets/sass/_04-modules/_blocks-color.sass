@@ -1,0 +1,55 @@
+.blocks-color-section
+  overflow: hidden
+  .block-image
+    img
+      width: 100%
+      max-width: 100%
+      height: 100%
+      object-fit: cover
+      transition: all .3s ease-in-out
+  .block-content
+    background-color: $primary-color
+    color: white
+    min-height: 540px
+    padding-left: 6%
+    padding-right: 6%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+    transition: all .3s ease-in-out
+    .section
+      &-title-wrapper
+        span
+          background-color: $dark-blue
+      &-title
+        color: #FFFFFF
+      &-subtitle
+        color: $dark-blue
+    .description
+      font-family: $body-font
+      font-weight: normal
+      font-size: 1rem
+      line-height: 2rem
+      color: #FFFFFF
+      margin-bottom: 30px
+    .block-btn
+      font-family: $title-font
+      font-size: 1rem
+      font-weight: 600
+      display: inline-block
+      text-align: center
+      text-decoration: none
+      padding: 10px 30px
+      color: #FFFFFF
+      background-color: $dark-blue
+      border-radius: 50px
+      flex-basis: 0
+      svg
+        margin-left: 10px
+
+@include media-breakpoint-down(md)
+  .blocks-color-section
+    .block-content
+      padding-left: 10%
+      padding-right: 10%

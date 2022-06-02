@@ -1,0 +1,81 @@
+.teams-section
+  .team
+    &:nth-child(even)
+      background-color: $light-background
+      .team-content
+        hr
+          background-color: $smooth-grey
+        .staff-card
+          background-color: #fff
+    .team-image
+      img
+        width: 100%
+        max-width: 100%
+        height: auto
+        object-fit: cover
+    .team-content
+      padding: 100px 0px 70px
+      hr
+        width: 100px
+        height: 3px
+        background-color: $light-grey
+        margin: 30px auto
+      .team-name
+        text-align: center
+        font-family: $title-font
+        font-size: 2rem
+        text-transform: uppercase
+        margin-bottom: 30px
+        display: flex
+        justify-content: center
+        align-items: center
+        margin: 0 auto
+        span
+          &:first-of-type
+            color: $primary-color
+          &:last-of-type
+            font-size: .9rem
+            padding: 5px 10px
+            background-color: $primary-color
+            color: #ffff
+            margin-left: 10px
+      .team-players-names
+        text-align: center
+        font-family: $body-font
+        font-weight: 700
+        font-size: 1.2rem
+        line-height: 2.4rem
+        margin-bottom: 40px
+
+
+      .staff-card
+        background-color: $light-background
+        display: flex
+        align-items: center
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16)
+        margin-bottom: 30px
+        &__content
+          padding: 20px
+        &__name
+          font-family: $title-font
+          font-weight: 600
+          font-size: 1.1rem
+          letter-spacing: -0.02em
+          text-transform: uppercase
+          color: $dark-blue
+          margin-bottom: 10px
+        &__position
+          font-family: $title-font
+          font-weight: 500
+          font-size: 0.8rem
+          letter-spacing: -0.02em
+          text-transform: uppercase
+          color: $primary-color
+          margin-bottom: 10px
+        &__description
+          font-family: $body-font
+          font-weight: normal
+          font-size: 1rem
+          color: $body-text
+          margin-bottom: 0px
+

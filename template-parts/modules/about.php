@@ -20,13 +20,16 @@
 					<h2 class="section-title"><?php the_field( 'about_section_title' ); ?></h2>
 					<span></span>
 				</div>
-				<p class="section-description"><?php the_field( 'about_section_description' ); ?></p>
+				<p class="about-section-description"><?php the_field( 'about_section_description' ); ?></p>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-12 col-lg-6">
-				<span class="section-subtitle"><?php the_field( 'about_section_sponsors_group_subtitle' ); ?></span>
-				<h2 class="section-title"><?php the_field( 'about_section_sponsors_group_title' ); ?></h2>
+			<div class="col-12">
+				<p class="section-subtitle"><?php the_field( 'about_section_sponsors_group_subtitle' ); ?></p>
+				<div class="section-title-wrapper">
+					<h2 class="section-title"><?php the_field( 'about_section_sponsors_group_title' ); ?></h2>
+					<span></span>
+				</div>
 			</div>
 		</div>
 		<?php

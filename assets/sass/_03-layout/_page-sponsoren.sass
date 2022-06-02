@@ -1,0 +1,34 @@
+.sponsoren-wrapper
+  .sponsor
+    padding: 100px 0px
+    &:nth-child(even)
+      background-color: $light-background
+      hr
+        background-color: $smooth-grey
+    hr
+      width: 100px
+      height: 3px
+      background-color: $light-grey
+      margin: 30px auto
+    &__name
+      text-align: center
+      font-family: $title-font
+      font-size: 2rem
+      text-transform: uppercase
+      margin-bottom: 30px
+      display: flex
+      justify-content: center
+      align-items: center
+      margin: 0 auto
+      span
+        &:first-of-type
+          color: $primary-color
+          margin-right: 5px
+    &__logo
+      a
+        display: block
+        img
+          width: 100%
+          max-width: 100%
+          height: auto
+          object-fit: cover

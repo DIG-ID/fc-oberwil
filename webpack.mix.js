@@ -9,6 +9,7 @@ mix
     jquery: ['$', 'window.jQuery']
   })
   .js('assets/js/main.js', 'dist')
+  .js('assets/js/google-maps.js', 'dist')
   .sass('assets/sass/main.sass', 'dist')
   .sass('assets/sass/admin-login.sass', 'dist')
 
