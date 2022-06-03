@@ -49,6 +49,8 @@ function fco_setup() {
 
 	add_image_size( 'sponsoren-logo-thumb', 420, 230, array( 'center', 'center' ) );
 
+	add_image_size( 'page-header', 1920, 400, array( 'center', 'center' ) );
+
 	register_nav_menus(
 		array(
 			'primary' => __( 'Main menu', 'fc-oberwil' ),
