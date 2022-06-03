@@ -308,7 +308,7 @@
       position : latLng,
       map: map,
       icon: {
-        url: "https://boccogroup.com/wp-content/uploads/icon.png",
+        url: "https://fc-oberwil.yournewwebsite.ch/wp-content/uploads/fco-map-marker.svg",
       }
     });
   
