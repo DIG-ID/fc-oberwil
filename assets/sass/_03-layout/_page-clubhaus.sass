@@ -8,27 +8,35 @@
     display: flex
     align-items: center
     margin-bottom: 20px
-    svg
+    i
+      font-size: 2rem
+      color: $primary-color
       margin-right: 20px
     p
       font-family: $title-font
-      font-size: 1rem
+      font-size: 1.1rem
+      line-height: 2.1rem
       font-weight: 400
       text-decoration: none
       letter-spacing: 0.3px
       margin: 0px
-      color: $body-color
+      color: $body-text
   &__email
     display: flex
     align-items: center
     margin-bottom: 20px
-    svg
+    i
+      font-size: 1.1rem
+      color: $primary-color
       margin-right: 20px
     a
       margin: 0px
       font-family: $title-font
-      font-size: 1rem
+      font-size: 1.1rem
       font-weight: 400
       text-decoration: none
       letter-spacing: 0.3px
-      color: $body-color
+      color: $body-text
+      transition: all .3s ease-in-out
+      &:hover
+        color: $primary-color

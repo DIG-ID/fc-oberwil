@@ -30,18 +30,24 @@
         .socials-wrapper
           .social-link
             margin-right: 20px
+            text-decoration: none
+            color: #fff
             &:hover
-              svg
-                fill: $primary-color
-            svg
+              i
+                color: $primary-color
+                transition: all .3s ease-in-out
+            i
               transition: all .3s ease-in-out
-              height: 20px
+              font-size: 1rem
+              color: #fff
       .widget-contact
         &--address
           display: flex
           align-items: center
           margin-bottom: 20px
-          svg
+          i
+            color: $primary-color
+            font-size: 2rem
             margin-right: 20px
           p
             font-family: $title-font
@@ -54,7 +60,9 @@
           display: flex
           align-items: center
           margin-bottom: 20px
-          svg
+          i
+            color: $primary-color
+            font-size: 1.1rem
             margin-right: 20px
           a
             margin: 0px
@@ -64,6 +72,9 @@
             text-decoration: none
             letter-spacing: 0.3px
             color: #FFFFFF
+            transition: all .3s ease-in-out
+            &:hover
+              color: $primary-color
 
 
 

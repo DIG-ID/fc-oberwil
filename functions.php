@@ -160,6 +160,15 @@ if ( ! function_exists( 'fco_get_font_face_styles' ) ) :
 			font-display: swap;
 			src: url('" . get_theme_file_uri( 'assets/fonts/Roboto-Bold.ttf' ) . "') format('ttf');
 		}
+
+		@font-face {
+			font-family: 'fc-oberwil-icons';
+			src: url('" . get_theme_file_uri( 'assets/fonts/fc-oberwil-icons.ttf' ) . "') format('truetype'),
+				url('" . get_theme_file_uri( 'assets/fonts/fc-oberwil-icons.svg' ) . "');
+			font-weight: normal;
+			font-style: normal;
+			font-display: block;
+		}
 		";
 
 	}
@@ -184,6 +193,8 @@ if ( ! function_exists( 'fco_preload_webfonts' ) ) :
 		?>
 		<link rel="preload" href="<?php echo esc_url( get_theme_file_uri( 'assets/fonts/Poppins-Regular.ttf' ) ); ?>" as="font" type="font/ttf" crossorigin>
 		<link rel="preload" href="<?php echo esc_url( get_theme_file_uri( 'assets/fonts/Roboto-Regular.ttf' ) ); ?>" as="font" type="font/ttf" crossorigin>
+		<link rel="preload" href="<?php echo esc_url( get_theme_file_uri( 'assets/fonts/fc-oberwil-icons.ttf' ) ); ?>" as="font" type="font/ttf" crossorigin>
+		<link rel="preload" href="<?php echo esc_url( get_theme_file_uri( 'assets/fonts/fc-oberwil-icons.svg' ) ); ?>" as="font" type="font/svg" crossorigin>
 		<?php
 	}
 

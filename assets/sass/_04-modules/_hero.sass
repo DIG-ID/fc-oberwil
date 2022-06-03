@@ -67,6 +67,9 @@
         transition: all .3s ease-in-out
         &:hover
           background-color: darken($primary-color, 10%)
+        i
+          margin-left: 10px
+          font-size: .9rem
   .swiper-button-prev,
   .swiper-button-next
     color: #FFFFFF
@@ -142,9 +145,10 @@
       .post-date
         display: flex
         align-items: center
-        svg
+        i
           margin-right: 5px
-          fill: transparentize( $dark-grey, 0.2 )
+          color: transparentize( $dark-grey, 0.2 )
+          font-size: .9rem
         time
           font-family: $title-font
           font-weight: normal

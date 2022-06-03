@@ -31,7 +31,7 @@
       font-weight: normal
       font-size: 1rem
       line-height: 2rem
-      color: #FFFFFF
+      color: #fff
       margin-bottom: 30px
     .block-btn
       font-family: $title-font
@@ -45,7 +45,11 @@
       background-color: $dark-blue
       border-radius: 50px
       flex-basis: 0
-      svg
+      transition: all .3s ease-in-out
+      &:hover
+        background-color: darken($primary-color, 10%)
+      i
+        font-size: .9rem
         margin-left: 10px
 
 @include media-breakpoint-down(md)

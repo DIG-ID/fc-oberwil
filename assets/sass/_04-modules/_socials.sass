@@ -3,12 +3,16 @@
   .social-link
     display: block
     margin-right: 30px
+    text-decoration: none
+    opacity: 1
+    transition: all .3s ease-in-out
     &:last-of-type
       margin-right: 0px
-    svg
-      height: 16px
-      fill: #FFFFFF
-      margin-top: -6px
+    &:hover
+      opacity: .6
+    i
+      font-size: 1rem
+      color: #FFFFFF
 .navbar
   .socials-wrapper
     position: relative

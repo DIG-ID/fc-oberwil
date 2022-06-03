@@ -46,7 +46,7 @@
 											<?php the_title( '<h3 class="post-title">', '</h3>' ); ?>
 											<div class="post-description"><?php the_excerpt(); ?></div>
 											<div class="post-date">
-												<svg xmlns="http://www.w3.org/2000/svg" width="13.521" height="13.521" viewBox="0 0 13.521 13.521"><defs><style>.a{fill-rule:evenodd;}</style></defs><path class="a" d="M6.76,12.676A5.915,5.915,0,1,0,.845,6.76,5.915,5.915,0,0,0,6.76,12.676Zm6.76-5.915A6.76,6.76,0,1,1,6.76,0,6.76,6.76,0,0,1,13.521,6.76Z"/><path class="a" d="M16.173,6.75a.423.423,0,0,1,.423.423v4.4l2.745,1.568a.423.423,0,0,1-.419.734l-2.958-1.69a.423.423,0,0,1-.213-.367V7.173A.423.423,0,0,1,16.173,6.75Z" transform="translate(-9.835 -4.215)"/></svg>
+												<i class="fco-icon-clock"></i>
 												<time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
 											</div>
 										</div>
@@ -75,7 +75,7 @@
 											<?php the_title( '<h3 class="post-title">', '</h3>' ); ?>
 											<div class="post-description"><?php the_excerpt(); ?></div>
 											<div class="post-date">
-												<svg xmlns="http://www.w3.org/2000/svg" width="13.521" height="13.521" viewBox="0 0 13.521 13.521"><defs><style>.a{fill-rule:evenodd;}</style></defs><path class="a" d="M6.76,12.676A5.915,5.915,0,1,0,.845,6.76,5.915,5.915,0,0,0,6.76,12.676Zm6.76-5.915A6.76,6.76,0,1,1,6.76,0,6.76,6.76,0,0,1,13.521,6.76Z"/><path class="a" d="M16.173,6.75a.423.423,0,0,1,.423.423v4.4l2.745,1.568a.423.423,0,0,1-.419.734l-2.958-1.69a.423.423,0,0,1-.213-.367V7.173A.423.423,0,0,1,16.173,6.75Z" transform="translate(-9.835 -4.215)"/></svg>
+												<i class="fco-icon-clock"></i>
 												<time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
 											</div>
 										</div>
@@ -106,7 +106,7 @@
 											<?php the_title( '<h3 class="post-title">', '</h3>' ); ?>
 											<div class="post-description d-xl-none"><?php the_excerpt(); ?></div>
 											<div class="post-date">
-												<svg xmlns="http://www.w3.org/2000/svg" width="13.521" height="13.521" viewBox="0 0 13.521 13.521"><defs><style>.a{fill-rule:evenodd;}</style></defs><path class="a" d="M6.76,12.676A5.915,5.915,0,1,0,.845,6.76,5.915,5.915,0,0,0,6.76,12.676Zm6.76-5.915A6.76,6.76,0,1,1,6.76,0,6.76,6.76,0,0,1,13.521,6.76Z"/><path class="a" d="M16.173,6.75a.423.423,0,0,1,.423.423v4.4l2.745,1.568a.423.423,0,0,1-.419.734l-2.958-1.69a.423.423,0,0,1-.213-.367V7.173A.423.423,0,0,1,16.173,6.75Z" transform="translate(-9.835 -4.215)"/></svg>
+												<i class="fco-icon-clock"></i>
 												<time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
 											</div>
 										</div>
