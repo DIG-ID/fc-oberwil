@@ -2,9 +2,12 @@
 	<div class="container">
 		<div class="row news-content">
 			<?php
-			$args = array(
-				'cat'                 => 4,
-				'posts_per_page'      => 6,
+			//Protect against arbitrary paged values
+			$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+			$args  = array(
+				'cat'            => 4,
+				'posts_per_page' => 6,
+				'paged'          => $paged,
 			);
 			$news_query = new WP_Query( $args );
 			if ( $news_query->have_posts() ) :
@@ -14,7 +17,11 @@
 					<div class="col-12 col-lg-4">
 						<a href="<?php the_permalink(); ?>" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							<article class="post-card">
-								<?php the_post_thumbnail( 'news-lg-thumbnail' ); ?>
+								<?php if ( has_post_thumbnail( ) ) : ?>
+									<?php the_post_thumbnail( 'news-lg-thumbnail' ); ?>
+								<?php else : ?>
+									<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/imgs/post-thumbnail-default-2.png' ); ?>" alt="fc oberwill default news thumbnail" >
+								<?php endif; ?>
 								<div class="post-content">
 									<?php
 									$post_tags = get_the_tags();
@@ -41,6 +48,29 @@
 			endif;
 			wp_reset_postdata();
 			?>
+		</div>
+		<div class="row justify-content-center align-items-center">
+			<div class="col-6 text-center">
+				<nav class="page-pagination">
+					<?php
+					$bignum = 999999999;
+					echo paginate_links(
+						array(
+							'base'      => str_replace( $bignum, '%#%', esc_url( get_pagenum_link( $bignum ) ) ),
+							'format'    => '',
+							'current'   => max( 1, get_query_var( 'paged' ) ),
+							'total'     => $news_query->max_num_pages,
+							'prev_text' => '<i class="fco-icon-chevron-left" aria-hidden="true"></i>',
+							'next_text' => '<i class="fco-icon-chevron-right" aria-hidden="true"></i>',
+							'type'      => 'list',
+							'end_size'  => 1,
+							'mid_size'  => 1,
+						)
+					);
+					fco_pagination();
+					?>
+				</nav>
+			</div>
 		</div>
 	</div>
 </section>

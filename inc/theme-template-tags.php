@@ -52,3 +52,32 @@ function fco_socials() {
 }
 
 add_action( 'socials', 'fco_socials' );
+
+if ( ! function_exists( 'fco_pagination' ) ) {
+
+	function fco_pagination() {
+		global $wp_query;
+		$bignum = 999999999;
+		if ( $wp_query->max_num_pages <= 1 ) {
+			return;
+		}
+		echo '<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">';
+		echo '<hr>';
+		echo '<nav class="page-pagination">';
+		echo paginate_links(
+			array(
+				'base'      => str_replace( $bignum, '%#%', esc_url( get_pagenum_link( $bignum ) ) ),
+				'format'    => '',
+				'current'   => max( 1, get_query_var( 'paged' ) ),
+				'total'     => $wp_query->max_num_pages,
+				'prev_text' => '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
+				'next_text' => '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
+				'type'      => 'list',
+				'end_size'  => 1,
+				'mid_size'  => 1,
+			)
+		);
+		echo '</nav>';
+		echo '</div>';
+	}
+}
