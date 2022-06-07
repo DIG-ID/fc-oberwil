@@ -13,7 +13,6 @@
 		<div class="row latest-news-content">
 			<?php
 			$args = array(
-				'cat'                 => 4,
 				'posts_per_page'      => 3,
 				'ignore_sticky_posts' => 1,
 				'post__not_in'        => get_option( 'sticky_posts' ),

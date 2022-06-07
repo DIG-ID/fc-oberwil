@@ -7,7 +7,6 @@
 <section id="hero-section" class="hero-section">
 	<?php
 	$args = array(
-		'cat'            => 4,
 		'posts_per_page' => 3,
 		'post__in'       => get_option( 'sticky_posts' ),
 	);

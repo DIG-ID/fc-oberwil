@@ -1,0 +1,113 @@
+.post-template-default
+  .page-header
+    .page-title
+      margin-top: 20px
+      margin-bottom: 20px
+  .instawall-section
+    background-color: #ffffff
+  
+  .single-content-section
+    padding-top: 100px
+    padding-bottom: 60px
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6
+      font-family: $title-font
+      font-weight: 600
+      margin-bottom: 30px
+
+    h1
+      font-size: 1.6rem
+    h2
+      font-size: 1.5rem
+    h3
+      font-size: 1.4rem
+    h4
+      font-size: 1.3rem
+    h5
+      font-size: 1.2rem
+    h6
+      font-size: 1.1rem
+
+    p,
+    ul,
+    li,
+    a
+      font-family: $body-font
+      font-size: 1rem
+      font-weight: 400
+      line-height: 2rem
+      color: $body-text
+
+    a
+      font-family: $body-font
+      font-size: 1rem
+      font-weight: 400
+      line-height: 2rem
+      color: $primary-color
+      text-decoration: none
+
+
+    img
+      max-width: 100%
+
+    iframe
+      width: 100%
+      outline: none
+
+
+.post-nav-section
+  padding: 40px 0px
+  background-color: $light-background
+  .nav-links
+    display: flex
+    justify-content: space-between
+    align-items: center
+    .nav-previous,
+    .nav-next
+      padding: 30px
+      background-color: #ffffff
+      width: 100%
+      max-width: 400px
+      a
+        display: flex
+        align-items: center
+        color: $dark-blue
+        text-decoration: none
+        i
+          font-size: 2rem
+          color: $primary-color
+        .link-divider
+          display: block
+          width: 1px
+          height: 60px
+          margin: 0px 20px
+          border-right: 2px dotted $smooth-grey
+        .post-title
+          display: block
+          font-family: $title-font
+          font-weight: 600
+          font-size: 1.1rem
+          color: $dark-blue
+          text-overflow: ellipsis
+          overflow: hidden
+          // Addition lines for 2 line or multiline ellipsis
+          display: -webkit-box !important
+          -webkit-line-clamp: 1
+          -webkit-box-orient: vertical
+          white-space: normal
+        .previous-post,
+        .next-post
+          display: block
+          font-family: $title-font
+          font-weight: 400
+          font-size: .9rem
+          text-transform: uppercase
+          color: $primary-color
+    .nav-next
+      a
+        justify-content: end

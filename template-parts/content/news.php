@@ -66,7 +66,6 @@
 							'mid_size'  => 1,
 						)
 					);
-					fco_pagination();
 					?>
 				</nav>
 			</div>
