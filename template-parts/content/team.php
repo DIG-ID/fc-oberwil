@@ -36,7 +36,7 @@
 		</div>
 		<div class="row">
 			<?php if ( get_field( 'coach' ) ) : ?>
-				<div class="col-12 col-lg-6">
+				<div class="col-12 col-md-12 col-lg-6 col-xl-6 ">
 					<div class="staff-card">
 						<?php $staff_image = wp_get_attachment_image( get_field( 'coach_image' ), 'staff_portrait' ); ?>
 						<?php if ( $staff_image ) : ?>
@@ -51,7 +51,7 @@
 				</div>
 			<?php endif; ?>
 			<?php if ( get_field( 'assistent' ) ) : ?>
-				<div class="col-12 col-lg-6">
+				<div class="col-12 col-md-12 col-lg-6 col-xl-6 ">
 					<div class="staff-card">
 						<?php $staff_image = wp_get_attachment_image( get_field( 'assistent_image' ), 'staff_portrait' ); ?>
 						<?php if ( $staff_image ) : ?>
