@@ -5,9 +5,8 @@
 			//Protect against arbitrary paged values
 			$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 			$args  = array(
-				'cat'            => 4,
-				'posts_per_page' => 6,
-				'paged'          => $paged,
+				'cat'   => 4,
+				'paged' => $paged,
 			);
 			$news_query = new WP_Query( $args );
 			if ( $news_query->have_posts() ) :
