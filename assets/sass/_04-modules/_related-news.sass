@@ -6,6 +6,11 @@
     text-decoration: none
     transition: all .4s ease-in-out
     margin-bottom: 40px
+    &:hover
+      .post-title
+        color: $primary-color
+      .post-card
+        background-color: #fdfdfd
     &-card
       display: flex
       flex-direction: column
@@ -43,6 +48,7 @@
       letter-spacing: -0.02em
       line-height: 1.8rem
       color: $dark-blue
+      transition: all .3s ease-in-out
       text-overflow: ellipsis
       overflow: hidden
       // Addition lines for 2 line or multiline ellipsis

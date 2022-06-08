@@ -26,6 +26,8 @@
           color: $primary-color
           margin-right: 5px
     &__logo
+      background-color: rgba(174, 174, 174, 0.115)
+      padding: 30px
       a
         display: block
         img
@@ -33,3 +35,11 @@
           max-width: 100%
           height: auto
           object-fit: cover
+
+@include media-breakpoint-down(sm)
+  .sponsoren-wrapper
+    .sponsor
+      &__name
+        font-size: 1.5rem
+      hr
+        margin: 20px auto
