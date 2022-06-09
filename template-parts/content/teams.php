@@ -1,6 +1,9 @@
 <section class="teams-section">
 	<?php
-	$args = array( 'post_type' => 'teams' );
+	$args = array(
+		'post_type'      => 'teams',
+		'posts_per_page' => 4,
+	);
 	$the_query = new WP_Query( $args );
 	if ( $the_query->have_posts() ) :
 		while ( $the_query->have_posts() ) :
