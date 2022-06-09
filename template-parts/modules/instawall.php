@@ -11,7 +11,7 @@
 		</div>
 		<div class="row">
 			<div class="col-12">
-				<p>plugin/shortcode goes here</p>
+				<?php echo do_shortcode( get_theme_mod( 'instalwall_shortcode' ) ); ?>
 			</div>
 		</div>
 	</div>

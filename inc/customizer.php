@@ -18,6 +18,7 @@ function fco_customizer_register( $wp_customize ) {
 
 	require get_parent_theme_file_path( '/inc/customizer/socials.php' );
 	require get_parent_theme_file_path( '/inc/customizer/footer.php' );
+	require get_parent_theme_file_path( '/inc/customizer/instagram-wall.php' );
 
 }
 
