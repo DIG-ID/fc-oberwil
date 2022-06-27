@@ -45,7 +45,7 @@ $wp_customize->add_setting(
 		'type'              => 'theme_mod',
 		'capability'        => 'edit_theme_options',
 		'transport'         => 'refresh',
-		'sanitize_callback' => 'fco_sanitize_image',
+		'sanitize_callback' => 'wp_kses_post',
 	)
 );
 
