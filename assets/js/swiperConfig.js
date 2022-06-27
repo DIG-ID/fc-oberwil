@@ -23,4 +23,13 @@ $(function() {
     },
   });
 
+  var memberSwiper = new Swiper('.member-swiper', {
+    spaceBetween: 30,
+    slidesPerView: 3,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+
 });
