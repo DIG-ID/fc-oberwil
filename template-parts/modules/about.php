@@ -6,7 +6,7 @@
 <section id="about-section" class="about-section">
 	<div class="container">
 		<div class="row align-items-center about-wrapper">
-			<div class="col-12 col-lg-6">
+			<div class="col-12 col-lg-6 d-none d-lg-block">
 				<?php
 				$image = get_field( 'about_section_image' );
 				if ( $image ) :
