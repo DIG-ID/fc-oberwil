@@ -32,18 +32,27 @@
 				</div>
 			</div>
 		</div>
-		<?php
-		$featured_sponsors = get_field( 'about_section_sponsors_group_sponsors' );
-		if ( $featured_sponsors ) :
-			?>
-			<div class="row d-none sponsors-wrapper">
-				<?php foreach ( $featured_sponsors as $sponsor ) :
+		<div class="row sponsors-wrapper d-none aling-items-center">
+			<div class="swiper sponsor-swiper">
+				<div class="swiper-wrapper">
+					<?php
+					if ( have_rows( 'about_section_sponsors' ) ) :
+						while ( have_rows( 'about_section_sponsors' ) ) :
+							the_row();
+							$sponsors_image = get_sub_field( 'image' );
+							$sponsors_link  = get_sub_field( 'link' );
+							?>
+							<div class="col-6 col-lg-3 sponsor__logo swiper-slide">
+								<a href="<?php esc_url( $sponsors_link ); ?>" target="_blank">
+									<?php echo wp_get_attachment_image( $sponsors_image, 'sponsoren-logo-thumb' ); ?>
+								</a>
+							</div>
+							<?php
+						endwhile;
+					endif;
 					?>
-					<div class="col-6 col-sm-6 col-md-6 col-lg-3">
-						<?php echo get_the_post_thumbnail( $sponsor->ID,'full' ); ?>
-					</div>
-				<?php endforeach; ?>
+				</div>
 			</div>
-		<?php endif; ?>
+		</div>
 	</div>
 </section>

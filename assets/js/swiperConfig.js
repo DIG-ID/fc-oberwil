@@ -46,4 +46,16 @@ $(function() {
     },
   });
 
+  var sponsorSwiper = new Swiper('.sponsor-swiper', {
+    spaceBetween: 30,
+    //slidesPerView: 4,
+    loop: true,
+    speed: 8000,
+    slidesPerView: 'auto',
+    autoplay: {
+      delay: 1,
+      disableOnInteraction: false,
+    },
+  });
+
 });
