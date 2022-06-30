@@ -23,7 +23,7 @@
 				<p class="about-section-description"><?php the_field( 'about_section_description' ); ?></p>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row d-none">
 			<div class="col-12">
 				<p class="section-subtitle"><?php the_field( 'about_section_sponsors_group_subtitle' ); ?></p>
 				<div class="section-title-wrapper">
@@ -36,7 +36,7 @@
 		$featured_sponsors = get_field( 'about_section_sponsors_group_sponsors' );
 		if ( $featured_sponsors ) :
 			?>
-			<div class="row sponsors-wrapper">
+			<div class="row d-none sponsors-wrapper">
 				<?php foreach ( $featured_sponsors as $sponsor ) :
 					?>
 					<div class="col-6 col-sm-6 col-md-6 col-lg-3">
