@@ -23,7 +23,7 @@
 				<p class="about-section-description"><?php the_field( 'about_section_description' ); ?></p>
 			</div>
 		</div>
-		<div class="row d-none">
+		<div class="row">
 			<div class="col-12">
 				<p class="section-subtitle"><?php the_field( 'about_section_sponsors_group_subtitle' ); ?></p>
 				<div class="section-title-wrapper">
@@ -32,7 +32,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row sponsors-wrapper d-none aling-items-center">
+		<div class="row sponsors-wrapper aling-items-center">
 			<div class="swiper sponsor-swiper">
 				<div class="swiper-wrapper">
 					<?php
