@@ -24,6 +24,13 @@
 					<?php if ( $btn_url_1 ) : ?>
 						<a href="<?php echo esc_url( $btn_url_1 ); ?>" class="block-btn"><?php the_field( 'block_color_1_button_text' ); ?> <i class="fco-icon-chevron-right"></i></a>
 					<?php endif; ?>
+					<?php $form_sc = get_field( 'block_c_1_form_shortcode' ); ?>
+					<?php if ( $form_sc ) : ?>
+						<a data-fancybox href="#form-modal" class="block-btn"><?php the_field( 'block_color_1_button_text' ); ?> <i class="fco-icon-chevron-right"></i></a>
+						<div style="display: none;" id="form-modal">
+							<?php echo do_shortcode( $form_sc ); ?>
+						</div>
+					<?php endif; ?>
 				</div>
 			<?php endif; ?>
 		</div>

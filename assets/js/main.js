@@ -2,5 +2,5 @@
 import 'bootstrap';
 
 import './swiperConfig';
-//import "./fancybox";
+import './fancybox';
 import './custom';
