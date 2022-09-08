@@ -18,10 +18,10 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-12">
+			<div class="col-12 team-players-names__col">
+				<?php if ( have_rows( 'players' ) ) : ?>
 				<p class="team-players-names">
 					<?php
-					if ( have_rows( 'players' ) ) :
 						$team_player_names = array();
 						while ( have_rows( 'players' ) ) :
 							the_row();
@@ -29,9 +29,12 @@
 							$team_player_names[] = $player_name;
 						endwhile;
 						echo implode( ', ', $team_player_names );
-					endif;
 					?>
 				</p>
+				<?php endif; ?>
+				<?php if ( get_field('schedule_button_link') ) : ?>
+				<a href="<?php the_field('schedule_button_link') ?>" class="block-btn"><?php the_field('schedule_button_title') ?> <i class="fco-icon-chevron-right"></i></a>
+				<?php endif; ?>
 			</div>
 		</div>
 		<div class="row">
