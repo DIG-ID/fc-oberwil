@@ -2,8 +2,8 @@
 <?php $block_w_02 = get_field( 'block_w_2' ); ?>
 <section id="blocks-section" class="blocks-section">
 	<div class="container-fluid g-0">
-		<div class="row g-0">
-			<?php if ( $block_w_01 ) : ?>
+		<?php if ( $block_w_01 ) : ?>
+			<div class="row g-0">
 				<div class="col-12 col-lg-6 block-image">
 					<?php
 					$location = get_field( 'block_w_1_google_map' );
@@ -48,28 +48,30 @@
 						<?php endif; ?>
 					</div>
 				</div>
-			<?php endif; ?>
-		</div>
-		<div class="row g-0">
-			<?php if ( $block_w_02 ) : ?>
-				<div class="col-12 col-lg-6 order-1 order-lg-0 block-content">
-					<p class="section-subtitle"><?php the_field( 'block_w_2_subtitle' ); ?></p>
-					<div class="section-title-wrapper">
-						<h2 class="section-title"><?php the_field( 'block_w_2_title' ); ?></h2>
-						<span></span>
+			</div>
+		<?php
+		endif;
+		if ( $block_w_02 ) :
+			$block_image_02 = get_field( 'block_w_2_image' );
+			if ( $block_image_02 ) :
+				?>
+				<div class="row g-0">
+					<div class="col-12 col-lg-6 order-1 order-lg-0 block-content">
+						<p class="section-subtitle"><?php the_field( 'block_w_2_subtitle' ); ?></p>
+						<div class="section-title-wrapper">
+							<h2 class="section-title"><?php the_field( 'block_w_2_title' ); ?></h2>
+							<span></span>
+						</div>
+						<p class="description"><?php the_field( 'block_w_2_description' ); ?></p>
+						<?php $btn_url_2 = get_field( 'block_w_2_button_link' ); ?>
 					</div>
-					<p class="description"><?php the_field( 'block_w_2_description' ); ?></p>
-					<?php $btn_url_2 = get_field( 'block_w_2_button_link' ); ?>
+					<div class="col-12 col-lg-6 order-0 order-lg-1 block-image">
+						<?php echo wp_get_attachment_image( $block_image_02, 'full' ); ?>
+					</div>
 				</div>
-				<div class="col-12 col-lg-6 order-0 order-lg-1 block-image">
-					<?php
-					$block_image_02 = get_field( 'block_w_2_image' );
-					if ( $block_image_02 ) :
-						echo wp_get_attachment_image( $block_image_02, 'full' );
-					endif;
-					?>
-				</div>
-			<?php endif; ?>
-		</div>
+				<?php
+			endif;
+		endif;
+		?>
 	</div>
 </section>
