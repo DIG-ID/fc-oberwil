@@ -1,5 +1,6 @@
 <?php $block_c_01 = get_field( 'block_color_1' ); ?>
 <?php $block_c_02 = get_field( 'block_color_2' ); ?>
+<?php $block_c_03 = get_field( 'block_color_3' ); ?>
 <section id="blocks-color-section" class="blocks-color-section">
 	<div class="container-fluid g-0">
 		<div class="row g-0">
@@ -53,6 +54,30 @@
 						echo wp_get_attachment_image( $block_c_image_02, 'full' );
 					endif;
 					?>
+				</div>
+			<?php endif; ?>
+		</div>
+		<div class="row g-0">
+			<?php if ( $block_c_03 ) : ?>
+				<div class="col-12 col-lg-6 block-image" >
+					<?php
+					$block_c_image_03 = get_field( 'block_color_3_image' );
+					if ( $block_c_image_03 ) :
+						echo wp_get_attachment_image( $block_c_image_03, 'block-image' );
+					endif;
+					?>
+				</div>
+				<div class="col-12 col-lg-6 block-content">
+					<p class="section-subtitle"><?php the_field( 'block_color_3_subtitle' ); ?></p>
+					<div class="section-title-wrapper">
+						<h2 class="section-title"><?php the_field( 'block_color_3_title' ); ?></h2>
+						<span></span>
+					</div>
+					<p class="description"><?php the_field( 'block_color_3_description' ); ?></p>
+					<?php $btn_url_1 = get_field( 'block_color_3_button_link' ); ?>
+					<?php if ( $btn_url_1 ) : ?>
+						<a href="<?php echo esc_url( $btn_url_1 ); ?>" class="block-btn"><?php the_field( 'block_color_1_button_text' ); ?> <i class="fco-icon-chevron-right"></i></a>
+					<?php endif; ?>
 				</div>
 			<?php endif; ?>
 		</div>
