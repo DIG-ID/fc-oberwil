@@ -74,9 +74,9 @@
 						<span></span>
 					</div>
 					<p class="description"><?php the_field( 'block_color_3_description' ); ?></p>
-					<?php $btn_url_1 = get_field( 'block_color_3_button_link' ); ?>
-					<?php if ( $btn_url_1 ) : ?>
-						<a href="<?php echo esc_url( $btn_url_1 ); ?>" class="block-btn"><?php the_field( 'block_color_1_button_text' ); ?> <i class="fco-icon-chevron-right"></i></a>
+					<?php $btn_url_3 = get_field( 'block_color_3_button_link' ); ?>
+					<?php if ( $btn_url_3 ) : ?>
+						<a href="<?php echo esc_url( $btn_url_3 ); ?>" class="block-btn"><?php the_field( 'block_color_3_button_text' ); ?> <i class="fco-icon-chevron-right"></i></a>
 					<?php endif; ?>
 				</div>
 			<?php endif; ?>
