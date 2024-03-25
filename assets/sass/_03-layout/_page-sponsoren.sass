@@ -1,4 +1,7 @@
 .sponsoren-wrapper
+  &--partner
+    .sponsor
+      background-color: #FFFFFF
   .sponsor
     padding: 100px 0px
     &:nth-child(odd)
@@ -35,6 +38,12 @@
           max-width: 100%
           height: auto
           object-fit: cover
+
+.sponsoren-wrapper
+  .sponsor
+    padding: 100px 0px
+    &:nth-child(odd)
+      background-color: $light-background
 
 @include media-breakpoint-down(sm)
   .sponsoren-wrapper
