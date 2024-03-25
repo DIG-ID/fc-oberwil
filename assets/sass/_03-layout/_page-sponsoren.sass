@@ -1,8 +1,4 @@
 .sponsoren-wrapper
-  &--partner
-    .sponsor
-      &:nth-child(odd)
-        background-color: #FFF
   .sponsor
     padding: 100px 0px
     &:nth-child(odd)
@@ -45,6 +41,10 @@
     padding: 100px 0px
     &:nth-child(odd)
       background-color: $light-background
+  &--partner
+    .sponsor
+      &:nth-child(odd)
+        background-color: #FFF
 
 @include media-breakpoint-down(sm)
   .sponsoren-wrapper
